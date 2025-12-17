@@ -1,6 +1,6 @@
-name = "gnu-style-blog"
+name = "eastaihub-blog"
 main = "src/index.tsx"
-compatibility_date = "2024-01-01"
+compatibility_date = "2025-01-01"
 
 # Serve static assets (CSS, images) from the public directory
 # This fulfills the "Cloudflare Pages" role for static hosting
