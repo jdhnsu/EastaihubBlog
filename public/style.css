@@ -1,0 +1,371 @@
+:root {
+    /* Lab Colors */
+    --lab-primary: #003366; /* Deep Tech Blue */
+    --lab-secondary: #0066cc; /* Lighter Blue */
+    --lab-accent: #ff9900; /* Subtle accent if needed */
+    --lab-bg: #f4f4f4; /* Slightly grey background for contrast with "paper" */
+    --lab-paper: #ffffff;
+    --lab-text: #333;
+    --lab-border: #e0e0e0;
+    --lab-shadow: 0 4px 15px rgba(0,0,0,0.08); /* Soft shadow for floating effect */
+}
+
+body {
+    font-family: "Segoe UI", "Noto Sans SC", "Helvetica Neue", sans-serif;
+    color: var(--lab-text);
+    background-color: var(--lab-bg);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+a {
+    color: var(--lab-secondary);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: var(--lab-primary);
+}
+
+/* Header & Top Bar */
+#heaptop {
+    background-color: #333;
+    color: #ddd;
+    font-size: 0.85em;
+    padding: 8px 20px;
+    text-align: right;
+    border-bottom: 1px solid #222;
+}
+
+#header {
+    background-color: var(--lab-primary);
+    color: white;
+    padding: 30px 20px;
+    border-bottom: 4px solid var(--lab-secondary);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+}
+
+#header h1 {
+    margin: 0;
+    font-size: 1.8em;
+    font-weight: 700;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+#header h1 a {
+    color: white;
+}
+
+.subtitle {
+    margin: 5px 0 0;
+    font-size: 1em;
+    opacity: 0.9;
+    font-weight: 300;
+}
+
+/* Navigation */
+#navigation {
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    padding: 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid #eee;
+}
+
+#navigation ul {
+    list-style: none;
+    padding: 0 20px;
+    margin: 0 auto;
+    max-width: 1200px;
+    display: flex;
+}
+
+#navigation li a {
+    display: block;
+    padding: 15px 20px;
+    color: #444;
+    font-weight: 600;
+    transition: all 0.2s;
+}
+
+#navigation li a:hover {
+    background-color: #f9f9f9;
+    color: var(--lab-primary);
+    text-decoration: none;
+    border-bottom: 2px solid var(--lab-secondary);
+}
+
+/* Layout Container */
+#main-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    display: flex;
+    gap: 40px;
+    min-height: 60vh;
+}
+
+#content {
+    flex: 3;
+    min-width: 0; /* Prevents flex items from overflowing */
+    background: var(--lab-paper);
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: var(--lab-shadow);
+}
+
+#sidebar {
+    flex: 1;
+    min-width: 280px;
+}
+
+/* Sidebar Modules */
+.sidebar-module {
+    background: var(--lab-paper);
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 8px;
+    border: none;
+    box-shadow: var(--lab-shadow);
+    transition: transform 0.2s ease;
+}
+
+.sidebar-module:hover {
+    transform: translateY(-2px);
+}
+
+.sidebar-module h3 {
+    margin-top: 0;
+    color: var(--lab-primary);
+    font-size: 1.1em;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.search-form {
+    display: flex;
+    gap: 8px;
+}
+
+.search-form input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background: #fcfcfc;
+}
+
+.search-form button {
+    padding: 10px 15px;
+    background: var(--lab-primary);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.search-form button:hover {
+    background: var(--lab-secondary);
+}
+
+/* Content Area */
+.intro-banner {
+    background: #eef6ff;
+    padding: 25px;
+    border-left: 5px solid var(--lab-secondary);
+    margin-bottom: 40px;
+    border-radius: 4px;
+}
+
+.intro-banner h2 {
+    margin-top: 0;
+    color: var(--lab-primary);
+}
+
+.share-prompt {
+    color: #555;
+    font-style: italic;
+    margin-bottom: 0;
+}
+
+.post-card {
+    margin-bottom: 40px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.post-card:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.post-card h3 {
+    margin-top: 0;
+    font-size: 1.6em;
+    margin-bottom: 10px;
+}
+
+.post-card h3 a {
+    color: #222;
+    transition: color 0.2s;
+}
+
+.post-card h3 a:hover {
+    color: var(--lab-primary);
+    text-decoration: none;
+}
+
+.meta {
+    font-size: 0.9em;
+    color: #888;
+    margin-bottom: 15px;
+}
+
+.tags {
+    color: var(--lab-secondary);
+}
+
+/* Article Styling */
+article h2 {
+    color: var(--lab-primary);
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+    font-size: 2em;
+}
+
+.article-meta {
+    background: #f8f9fa;
+    padding: 15px 20px;
+    margin-bottom: 30px;
+    border-left: 4px solid var(--lab-secondary);
+    color: #666;
+    font-size: 0.95em;
+    border-radius: 0 4px 4px 0;
+}
+
+article img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    margin: 20px 0;
+}
+
+article pre {
+    background: #282c34;
+    color: #abb2bf;
+    padding: 20px;
+    border-radius: 8px;
+    overflow-x: auto;
+    margin: 20px 0;
+    box-shadow: inset 0 2px 5px rgba(0,0,0,0.3);
+}
+
+article blockquote {
+    border-left: 4px solid var(--lab-secondary);
+    background: #f8fbff;
+    margin: 25px 0;
+    padding: 20px 25px;
+    color: #555;
+    border-radius: 0 8px 8px 0;
+}
+
+/* Pagination */
+.pagination {
+    margin-top: 50px;
+    padding-top: 30px;
+    border-top: 1px solid #f0f0f0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.pagination a {
+    display: inline-block;
+    padding: 8px 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    color: #555;
+    transition: all 0.2s;
+}
+
+.pagination a:hover {
+    background: var(--lab-primary);
+    color: white;
+    border-color: var(--lab-primary);
+    text-decoration: none;
+}
+
+/* Comments Section */
+.comments-section {
+    margin-top: 60px;
+    border-top: 1px solid #f0f0f0;
+    padding-top: 40px;
+}
+
+.comment-prompt {
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.comment-placeholder {
+    background: #fafafa !important;
+    border: 2px dashed #e0e0e0 !important;
+    border-radius: 8px;
+}
+
+/* Footer */
+#footer {
+    background-color: #222;
+    color: #aaa;
+    padding: 50px 20px;
+    text-align: center;
+    font-size: 0.9em;
+    margin-top: 80px;
+    border-top: 5px solid var(--lab-secondary);
+}
+
+#footer p {
+    margin: 10px 0;
+}
+
+/* Responsive */
+@media (max-width: 800px) {
+    #main-container {
+        flex-direction: column;
+        padding: 0 15px;
+    }
+
+    #content {
+        padding: 25px;
+    }
+    
+    #sidebar {
+        order: 1; /* Below content */
+    }
+
+    #navigation ul {
+        flex-direction: column;
+        padding: 0;
+    }
+
+    #navigation li a {
+        border-bottom: 1px solid #eee;
+    }
+}
