@@ -4,18 +4,19 @@
   "scripts": {
     "dev": "wrangler dev",
     "deploy": "wrangler deploy",
-    "build:content": "ts-node scripts/build-content.ts",
+    "build:content": "tsx scripts/build-content.ts",
     "build": "npm run build:content && wrangler deploy --dry-run --outdir=dist"
   },
   "dependencies": {
+    "gray-matter": "^4.0.3",
     "hono": "^4.0.0",
-    "marked": "^11.0.0",
-    "gray-matter": "^4.0.3"
+    "marked": "^11.0.0"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20240101.0",
     "@types/node": "^20.0.0",
     "ts-node": "^10.9.2",
+    "tsx": "^4.21.0",
     "typescript": "^5.0.0",
     "wrangler": "^3.0.0"
   }
