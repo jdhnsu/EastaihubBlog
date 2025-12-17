@@ -20,6 +20,8 @@ interface ContentManifest {
 }
 
 const MD_DIR = path.join(process.cwd(), 'md');
+const IMAGES_DIR = path.join(MD_DIR, 'image');
+const PUBLIC_IMAGES_DIR = path.join(process.cwd(), 'public/image');
 const OUTPUT_FILE = path.join(process.cwd(), 'src/content.json');
 
 // Ensure output directory exists
@@ -27,9 +29,23 @@ if (!fs.existsSync(path.dirname(OUTPUT_FILE))) {
   fs.mkdirSync(path.dirname(OUTPUT_FILE), { recursive: true });
 }
 
+// Ensure public images directory exists
+if (!fs.existsSync(PUBLIC_IMAGES_DIR)) {
+  fs.mkdirSync(PUBLIC_IMAGES_DIR, { recursive: true });
+}
+
 async function buildContent() {
   console.log('Building content from:', MD_DIR);
   
+  // Copy images
+  if (fs.existsSync(IMAGES_DIR)) {
+    console.log('Copying images...');
+    const images = fs.readdirSync(IMAGES_DIR);
+    for (const image of images) {
+      fs.copyFileSync(path.join(IMAGES_DIR, image), path.join(PUBLIC_IMAGES_DIR, image));
+    }
+  }
+
   if (!fs.existsSync(MD_DIR)) {
     console.error('Markdown directory not found!');
     process.exit(1);
@@ -54,6 +70,9 @@ async function buildContent() {
     // Generate HTML
     const htmlContent = await marked.parse(content);
     
+    // Fix image paths: ./image/ -> /image/
+    const fixedHtmlContent = htmlContent.replace(/src="\.\/image\//g, 'src="/image/');
+
     // Generate slug from filename or title
     const slug = path.basename(file, '.md');
 
@@ -66,14 +85,19 @@ async function buildContent() {
     });
 
     // Create Post object
+    let featured_image = data.featured_image || data.cover || data.top_img;
+    if (featured_image && featured_image.startsWith('./image/')) {
+      featured_image = featured_image.replace('./image/', '/image/');
+    }
+
     const post: Post = {
       slug,
       title: data.title || slug,
       date: data.date ? new Date(data.date).toISOString() : new Date().toISOString(),
       tags: tags,
       excerpt: data.excerpt || content.substring(0, 200).replace(/[#*`]/g, '') + '...',
-      content: htmlContent,
-      featured_image: data.featured_image || data.cover || data.top_img
+      content: fixedHtmlContent,
+      featured_image: featured_image
     };
 
     posts.push(post);

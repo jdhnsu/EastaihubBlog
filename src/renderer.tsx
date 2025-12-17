@@ -17,6 +17,7 @@ export const Layout = (props: LayoutProps) => {
         <title>{props.title ? `${props.title} - CNU AI Game Lab` : 'CNU学院人工智能游戏实验室(Eastaihub)'}</title>
         <meta name="description" content={props.metaDescription || "探索AI与游戏开发的创新融合"} />
         <link rel="stylesheet" href="/style.css" />
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
       </head>
       <body>
         <div id="heaptop">
@@ -73,20 +74,38 @@ export const Layout = (props: LayoutProps) => {
             </p>
             <p>Generated with Cloudflare Workers & Hono.</p>
         </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
       </body>
     </html>
   );
 };
 
+const DEFAULT_COVER = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' fill='%23f0f0f0'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='14' fill='%23aaa'%3ECover%3C/text%3E%3C/svg%3E";
+
 export const PostCard = ({ post }: { post: any }) => (
   <div class="post-card">
-    <h3><a href={`/post/${post.slug}`}>{post.title}</a></h3>
-    <div class="meta">
-        <span class="date">{new Date(post.date).toLocaleDateString()}</span>
-        {post.tags && post.tags.length > 0 && (
-            <span class="tags"> | Tags: {post.tags.join(', ')}</span>
-        )}
+    {post.featured_image && (
+      <div class="post-cover">
+        <img 
+          src={post.featured_image} 
+          alt={post.title} 
+          loading="lazy"
+          width="200"
+          height="200"
+          onError={`this.onerror=null;this.src='${DEFAULT_COVER}';`}
+        />
+      </div>
+    )}
+    <div class="post-content">
+      <h3><a href={`/post/${post.slug}`}>{post.title}</a></h3>
+      <div class="meta">
+          <span class="date">{new Date(post.date).toLocaleDateString()}</span>
+          {post.tags && post.tags.length > 0 && (
+              <span class="tags"> | Tags: {post.tags.join(', ')}</span>
+          )}
+      </div>
+      <p>{post.excerpt}</p>
     </div>
-    <p>{post.excerpt}</p>
   </div>
 );

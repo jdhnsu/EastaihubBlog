@@ -19,10 +19,10 @@ app.get('/', (c) => {
 
   return c.html(
     <Layout title="首页">
-      <div class="intro-banner">
+      {/* <div class="intro-banner">
         <h2>最新动态</h2>
-        <p class="share-prompt"></p>
-      </div>
+        <p class="share-prompt"> </p>
+      </div> */}
       <div class="posts-list">
         {posts.map((post) => (
           <PostCard post={post} />
@@ -86,13 +86,13 @@ app.get('/post/:slug', (c) => {
         <div class="article-content" dangerouslySetInnerHTML={{ __html: post.content }}></div>
       </article>
 
-      <div class="comments-section">
+      {/* <div class="comments-section">
         <h3>讨论区</h3>
         <p class="comment-prompt">请发表与主题相关的专业讨论</p>
         <div class="comment-placeholder" style="background: #f9f9f9; padding: 20px; border: 1px dashed #ccc; text-align: center; color: #777;">
            (评论功能开发中...)
         </div>
-      </div>
+      </div> */}
     </Layout>
   );
 });
