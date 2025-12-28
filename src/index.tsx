@@ -128,6 +128,121 @@ app.get('/tags', (c) => {
     );
 });
 
+app.get('/links', (c) => {
+    // 分类链接数据
+    const linkCategories = [
+      { name: 'Eastaihub 实验室资源',
+        links: [
+          { name: 'AI 抠图工具', url: 'https://demo.eastaihub.cloud/', description: 'Eastaihub 提供的 AI 抠图工具' },
+          { name: '文件转换服务器', url: 'https://tool.eastaihub.cloud/', description: 'Eastaihub 提供的文件转换服务器' },
+        ]
+     
+      },
+
+ 
+        {
+            name: '开发工具',
+            links: [
+                { name: 'VS Code', url: 'https://code.visualstudio.com/', description: '强大的代码编辑器' },
+                { name: 'GitHub', url: 'https://github.com/', description: '代码托管平台' },
+                { name: 'Figma', url: 'https://www.figma.com/', description: '协作设计工具' },
+                {name: 'PyCharm',url: 'https://www.jetbrains.com/zh-cn/pycharm/' , description: 'Python 开发工具'}
+            ]
+        },
+        {
+            name: '学习资源',
+            links: [
+                { name: 'MDN Web Docs', url: 'https://developer.mozilla.org/', description: 'Web开发文档' },
+                { name: 'GitHub Learning Lab', url: 'https://lab.github.com/', description: 'GitHub学习平台' },
+                { name: 'Coursera', url: 'https://www.coursera.org/', description: '在线课程平台' },
+                 {name: '计算机基础课程', url:'https://missing-semester-cn.github.io/',description: '课程学习材料'}
+            ]
+        },
+        {
+            name: '项目链接',
+            links: [
+                { name: 'Hono', url: 'https://hono.dev/', description: '轻量级Web框架' },
+                { name: 'Cloudflare Workers', url: 'https://workers.cloudflare.com/', description: '无服务器平台' },
+                { name: 'TypeScript', url: 'https://www.typescriptlang.org/', description: 'JavaScript超集' },
+               
+            ]
+        },
+
+        { 
+        name: "学校官方资源",
+        links: [
+        {name: "学校官方网站", url: 'https://nsu.edu.cn/', description: "NSU CNU 学校官方网站"},
+        {name: 'NSU 教育邮箱使用', url: 'https://stu.nsu.edu.cn/', description: 'NSU 教育邮箱使用说明'}
+        ]
+      },
+
+    ];
+
+    return c.html(
+        <Layout title="链接资源">
+            <h2>链接资源</h2>
+            <p>这里收集了各类开发工具、学习资源和项目链接，方便大家浏览和使用。</p>
+            
+            <div class="links-container">
+                {linkCategories.map((category, index) => (
+                    <div class="link-category" key={index}>
+                        <h3>{category.name}</h3>
+                        <div class="link-cards">
+                            {category.links.map((link, linkIndex) => (
+                                <div class="link-card" key={linkIndex}>
+                                    <div class="link-header">
+                                        <h4><a href={link.url} target="_blank" rel="noopener noreferrer">{link.name}</a></h4>
+                                        <button class="preview-btn" data-url={link.url} data-name={link.name} onclick="openPreview(this.dataset.url, this.dataset.name)">预览</button>
+                                    </div>
+                                    <p class="link-description">{link.description}</p>
+                                    <div class="link-url">
+                                        <a href={link.url} target="_blank" rel="noopener noreferrer">{link.url}</a>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                ))}
+            </div>
+
+            {/* 链接预览模态框 */}
+            <div id="link-preview-modal" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closePreview()">&times;</span>
+                    <h3 id="preview-title"></h3>
+                    <div class="preview-container">
+                        <iframe id="preview-iframe" src="" frameborder="0"></iframe>
+                    </div>
+                </div>
+            </div>
+
+            <script
+                dangerouslySetInnerHTML={{
+                    __html: `
+                        function openPreview(url, title) {
+                            document.getElementById('preview-title').textContent = title;
+                            document.getElementById('preview-iframe').src = url;
+                            document.getElementById('link-preview-modal').style.display = 'block';
+                        }
+
+                        function closePreview() {
+                            document.getElementById('link-preview-modal').style.display = 'none';
+                            document.getElementById('preview-iframe').src = '';
+                        }
+
+                        window.onclick = function(event) {
+                            const modal = document.getElementById('link-preview-modal');
+                            if (event.target == modal) {
+                                closePreview();
+                            }
+                        }
+                    `
+                }}
+            />
+        </Layout>
+    );
+});
+
 app.get('/search', (c) => {
   const query = c.req.query('q')?.toLowerCase() || '';
   const posts = manifest.posts.filter(p => 
