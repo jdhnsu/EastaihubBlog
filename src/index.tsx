@@ -146,7 +146,9 @@ app.get('/links', (c) => {
                 { name: 'VS Code', url: 'https://code.visualstudio.com/', description: '强大的代码编辑器' },
                 { name: 'GitHub', url: 'https://github.com/', description: '代码托管平台' },
                 { name: 'Figma', url: 'https://www.figma.com/', description: '协作设计工具' },
-                {name: 'PyCharm',url: 'https://www.jetbrains.com/zh-cn/pycharm/' , description: 'Python 开发工具'}
+                {name: 'PyCharm',url: 'https://www.jetbrains.com/zh-cn/pycharm/' , description: 'Python 开发工具'},
+                {name: 'Jupyter Notebook',url: 'https://jupyter.org/', description: '交互式计算环境'},
+                {name: 'Docker',url: 'https://www.docker.com/', description: '容器化平台'},
             ]
         },
         {
