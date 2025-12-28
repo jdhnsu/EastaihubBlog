@@ -135,6 +135,8 @@ app.get('/links', (c) => {
         links: [
           { name: 'AI 抠图工具', url: 'https://demo.eastaihub.cloud/', description: 'Eastaihub 提供的 AI 抠图工具' },
           { name: '文件转换服务器', url: 'https://tool.eastaihub.cloud/', description: 'Eastaihub 提供的文件转换服务器' },
+          {name: '文件存储服务器',url:'https://alist.eastaihub.cloud/', description: 'Eastaihub 提供的文件存储服务器'},
+          {name: 'Eastaihub_Blog 项目',url:'https://github.com/jdhnsu/EastaihubBlog', description: 'Eastaihub 实验室的博客项目, 基于 Hono 框架 🫡 欢迎投稿。'}
         ]
      
       },
