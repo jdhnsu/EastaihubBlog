@@ -413,6 +413,90 @@ article blockquote {
     margin: 10px 0;
 }
 
+/* MAXKB Chat Widget Customization */
+.kb-chat-btn {
+    background-color: var(--lab-primary) !important;
+    border: 2px solid var(--lab-secondary) !important;
+    border-radius: 50% !important;
+    width: 60px !important;
+    height: 60px !important;
+    box-shadow: 0 4px 12px rgba(0, 51, 102, 0.3) !important;
+    transition: all 0.3s ease !important;
+    z-index: 9999 !important;
+}
+
+.kb-chat-btn:hover {
+    background-color: var(--lab-secondary) !important;
+    transform: scale(1.1) !important;
+    box-shadow: 0 6px 16px rgba(0, 102, 204, 0.4) !important;
+}
+
+.kb-chat-btn::after {
+    content: "💬" !important;
+    font-size: 24px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.kb-chat-container {
+    z-index: 9998 !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15) !important;
+    border-radius: 12px !important;
+    overflow: hidden !important;
+    background-color: var(--lab-paper) !important;
+    color: var(--lab-text) !important;
+}
+
+.kb-chat-header {
+    background-color: var(--lab-primary) !important;
+    color: white !important;
+    border: none !important;
+    padding: 15px !important;
+    font-weight: bold !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+}
+
+.kb-chat-header-title {
+    color: white !important;
+    font-size: 1.1em !important;
+}
+
+.kb-chat-messages {
+    background-color: var(--lab-paper) !important;
+    color: var(--lab-text) !important;
+    padding: 15px !important;
+}
+
+.kb-chat-input-container {
+    background-color: var(--lab-paper) !important;
+    border-top: 1px solid var(--lab-border) !important;
+    padding: 10px !important;
+}
+
+.kb-chat-input {
+    border: 1px solid var(--lab-border) !important;
+    border-radius: 4px !important;
+    padding: 10px !important;
+    margin-right: 10px !important;
+}
+
+.kb-chat-send-button {
+    background-color: var(--lab-secondary) !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 4px !important;
+    padding: 8px 15px !important;
+}
+
+.kb-chat-send-button:hover {
+    background-color: var(--lab-primary) !important;
+}
+
 /* Responsive */
 @media (max-width: 800px) {
     #main-container {
