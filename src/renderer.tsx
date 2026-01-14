@@ -98,8 +98,10 @@ export const PostCard = ({ post }: { post: any }) => (
           src={post.featured_image}
           alt={post.title}
           loading="lazy"
+          fetchpriority="high"
           width="200"
           height="200"
+          decoding="async"
           onError={`this.onerror=null;this.src='${DEFAULT_COVER}';`}
         />
       </div>
