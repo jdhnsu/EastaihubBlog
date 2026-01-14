@@ -75,14 +75,14 @@ export const Layout = (props: LayoutProps) => {
           </p>
           <p>Generated with Cloudflare Workers & Hono.</p>
         </div>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+        {/* <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
         <script
-          async
-          defer
-          src="https://aichat.eastaihub.cloud/chat/api/embed?protocol=https&host=aichat.eastaihub.cloud&token=2df6df61cf63e957">
-        </script>
-
+          src="/widget.js"
+          data-chat-url="http://10.217.13.78:8080/chat/share/019b5422-8708-7ec1-9bfd-9e0e6b00f606"
+          data-title="智能助手"
+          data-theme-color="#1677ff"
+        ></script> */}
       </body>
     </html>
   );
