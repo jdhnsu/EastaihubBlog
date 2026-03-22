@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">
+  <rect width="1280" height="720" fill="#111827"/>
+  <text x="640" y="85" text-anchor="middle" fill="#e5e7eb" font-family="Segoe UI, Arial" font-size="42" font-weight="700">Editors Overview</text>
+  <rect x="90" y="130" width="360" height="500" rx="18" fill="#0b1220" stroke="#3b82f6" stroke-width="3"/>
+  <rect x="460" y="130" width="360" height="500" rx="18" fill="#0b1220" stroke="#f59e0b" stroke-width="3"/>
+  <rect x="830" y="130" width="360" height="500" rx="18" fill="#0b1220" stroke="#22c55e" stroke-width="3"/>
+  <text x="270" y="185" text-anchor="middle" fill="#93c5fd" font-family="Segoe UI, Arial" font-size="30" font-weight="700">VS Code</text>
+  <text x="640" y="185" text-anchor="middle" fill="#fcd34d" font-family="Segoe UI, Arial" font-size="30" font-weight="700">PyCharm</text>
+  <text x="1010" y="185" text-anchor="middle" fill="#86efac" font-family="Segoe UI, Arial" font-size="30" font-weight="700">Vim / Neovim</text>
+  <rect x="130" y="240" width="280" height="30" rx="8" fill="#334155"/>
+  <rect x="130" y="290" width="220" height="30" rx="8" fill="#334155"/>
+  <rect x="130" y="340" width="260" height="30" rx="8" fill="#334155"/>
+  <rect x="500" y="240" width="280" height="30" rx="8" fill="#334155"/>
+  <rect x="500" y="290" width="220" height="30" rx="8" fill="#334155"/>
+  <rect x="500" y="340" width="260" height="30" rx="8" fill="#334155"/>
+  <rect x="870" y="240" width="280" height="30" rx="8" fill="#334155"/>
+  <rect x="870" y="290" width="220" height="30" rx="8" fill="#334155"/>
+  <rect x="870" y="340" width="260" height="30" rx="8" fill="#334155"/>
+</svg>

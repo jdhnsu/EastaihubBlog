@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">
+  <rect width="1280" height="720" fill="#111827"/>
+  <text x="640" y="85" text-anchor="middle" fill="#f1f5f9" font-family="Segoe UI, Arial" font-size="40" font-weight="700">BIOS Quick Setup</text>
+  <rect x="240" y="130" width="800" height="470" rx="24" fill="#0b1220" stroke="#38bdf8" stroke-width="3"/>
+  <rect x="290" y="210" width="700" height="60" rx="10" fill="#1f2937"/>
+  <rect x="290" y="300" width="700" height="60" rx="10" fill="#1f2937"/>
+  <rect x="290" y="390" width="700" height="60" rx="10" fill="#1f2937"/>
+  <text x="330" y="250" fill="#93c5fd" font-family="Segoe UI, Arial" font-size="28">Secure Boot: Disabled</text>
+  <text x="330" y="340" fill="#93c5fd" font-family="Segoe UI, Arial" font-size="28">Fast Boot: Disabled</text>
+  <text x="330" y="430" fill="#93c5fd" font-family="Segoe UI, Arial" font-size="28">Boot Priority: USB First</text>
+</svg>

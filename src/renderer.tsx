@@ -37,6 +37,7 @@ export const Layout = (props: LayoutProps) => {
             <li><a href="/">首页</a></li>
             <li><a href="/tags">分类标签</a></li>
             <li><a href="/links">链接资源</a></li>
+            <li><a href="/demonstration/">工具演示</a></li>
             {/* <li><a href="#">关于实验室</a></li>
                 <li><a href="#">项目展示</a></li> */}
           </ul>

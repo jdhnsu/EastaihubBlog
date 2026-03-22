@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">
+  <rect width="1280" height="720" fill="#0f172a"/>
+  <text x="640" y="85" text-anchor="middle" fill="#dbeafe" font-family="Segoe UI, Arial" font-size="40" font-weight="700">OS Install Journey</text>
+  <circle cx="220" cy="360" r="70" fill="#1e293b" stroke="#60a5fa" stroke-width="4"/>
+  <circle cx="500" cy="360" r="70" fill="#1e293b" stroke="#34d399" stroke-width="4"/>
+  <circle cx="780" cy="360" r="70" fill="#1e293b" stroke="#f59e0b" stroke-width="4"/>
+  <circle cx="1060" cy="360" r="70" fill="#1e293b" stroke="#f472b6" stroke-width="4"/>
+  <text x="220" y="367" text-anchor="middle" fill="#e2e8f0" font-family="Segoe UI, Arial" font-size="18">1 USB Boot</text>
+  <text x="500" y="367" text-anchor="middle" fill="#e2e8f0" font-family="Segoe UI, Arial" font-size="18">2 BIOS</text>
+  <text x="780" y="367" text-anchor="middle" fill="#e2e8f0" font-family="Segoe UI, Arial" font-size="18">3 Install</text>
+  <text x="1060" y="367" text-anchor="middle" fill="#e2e8f0" font-family="Segoe UI, Arial" font-size="18">4 Verify</text>
+  <line x1="290" y1="360" x2="430" y2="360" stroke="#64748b" stroke-width="6"/>
+  <line x1="570" y1="360" x2="710" y2="360" stroke="#64748b" stroke-width="6"/>
+  <line x1="850" y1="360" x2="990" y2="360" stroke="#64748b" stroke-width="6"/>
+</svg>
